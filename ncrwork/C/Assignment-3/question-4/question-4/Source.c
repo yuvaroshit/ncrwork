@@ -1,36 +1,68 @@
 #include<stdio.h>
-#include<string.h>
-int a(char*);
-int b(char*);
-int c(char*);
 int main()
 {
-	char hex[10],ch;
-	gets(hex);
-	printf("a. Display hexadecimal equivalent of 1s Complement\n");
-	printf("b. Carry out a masking operation and display the hexadecimal equivalent of result\n");
-	printf("c. Carry out a bit shifting operation and display hexadecimal equivalent of result\n");
-	printf("d. Exit\n");
-	scanf("%c", &ch);
-	switch (ch)
+	int a, mask;
+	scanf_s("%d", &a);
+	printf("\nEntered number in hexa is %x", a);
+	while (1)
 	{
-	case 'a':
-		a(hex);
-		break;
-	case 'b':
-		b(hex);
-		break;
-	case 'c':
-		c(hex);
-		break;
-	case 'd':
-		exit(1);
-		break;
-	default:
-		printf("Enter valid option");
-		break;
+		printf("\nEnter choice 1.1s compliment in hexa\n2.masking\n3.bit shifting\n4.exit");
+		int ch;
+		scanf_s("%d", &ch);
+		int b;
+		switch (ch)
+		{
+		case 1:
+			b = (int)~a;
+			printf("%x", b);
+			break;
+		case 2:
+			printf("\nselect \n7:and\n8:or\n:9:xor\n");
+			scanf_s("%d", &mask);
+			printf("%d", mask);
+			switch (mask)
+			{
+			case 7:
+				b = a & 1;
+				printf("%x", b);
+				break;
+			case 8:
+				b = a | 1;
+				printf("%x", b);
+				break;
+			case 9:
+				b = a ^ 1;
+				printf("%x", b);
+				break;
+			default:
+				printf("something went wrong2");
+				break;
+			}
+			break;
+		case 3:
+			printf("Enter\n 10.left shift \n 11.right shift");
+			scanf_s("%d", &mask);
+			switch (mask)
+			{
+			case 10:
+				b = a << 1;
+				printf("%x", b);
+				break;
+
+			case 11:
+				b = a >> 1;
+				printf("%x", b);
+				break;
+			}
+			break;
+		case 4:
+			exit(0);
+		default:
+			printf("something went wrong1");
+			break;
+		}
+
 	}
 	getch();
 	return 0;
-
 }
