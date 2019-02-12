@@ -1,9 +1,9 @@
 #include<stdio.h>
-struct __attribute__((packed, aligned(4))) str
+struct  str
 {
 	int data;
 	char ch;
-};
+}s;
 union un
 {
 	int data1;
