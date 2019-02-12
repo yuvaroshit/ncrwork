@@ -14,7 +14,6 @@ int main()
 {
 	printf("Size of structure is %d\n", sizeof(s));
 	printf("Size of union is %d", sizeof(u));
-	printf("Check");
 	getch();
 	return 0;
 
