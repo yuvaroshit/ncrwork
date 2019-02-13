@@ -12,7 +12,7 @@ public:
 	{
 		strcpy_s(student_name, name);
 		mark1 = m1;
-		mark2 = m2;
+		mark2 = m2;//sgd
 		mark3 = m3;
 	}
 	void calculate_Average()
