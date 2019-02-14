@@ -17,14 +17,14 @@ void mul(mat m1)
 			int sum = 0;
 			for (int k = 0; k < 3; k++)
 			{
-				sum = sum + m1.a[i][k] * m1.a[k][j];
+				sum = sum + m1.a[i][k] * m1.b[k][j];
 			}
 			m1.c[i][j] = sum;
 		}
 	}
 	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 1; j++)
 		{
 			cout << m1.c[i][j] << " ";
 		}
