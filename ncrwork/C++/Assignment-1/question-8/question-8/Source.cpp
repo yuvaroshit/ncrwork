@@ -25,10 +25,10 @@ public:
 		cout << "Destructor invoked";
 	}
 };
-int main() 
+int main()
 {
-	Employee e;
-	cout << "Size is:" << sizeof(e);
+	{Employee e; cout << "Size is:" << sizeof(e); }
+	{Employee d;}	
 	getchar();
 	return 0;
 }
