@@ -20,7 +20,7 @@ public:
 	void Travel_Forward();
 	void Travel_Backward();
 	void Reverse();
-	~__list__();
+	//~__list__();
 };
 __list__::__list__()
 {
@@ -145,13 +145,29 @@ void __list__::Delete_Spec(int ele)
 	else
 		cout << "List is Empty";
 }
-/*void __list__::Travel_Forward()
+void __list__::Travel_Forward()
 {
-
-}*/
+	struct node *p;
+	p = start;
+	while (p != NULL)
+	{
+		cout << p->data;
+		p = p->next;
+	}
+}
 
 int main()
 {
+	__list__ l;
+	l.Insert_First(10);
+	l.Insert_Last(20);
+	l.Insert_After(10, 30);
+	l.Travel_Forward();
+	l.Delete_First();
+	l.Delete_Last();
+	l.Delete_Spec(30);
+	l.Travel_Forward();
+	system("pause");
 	getchar();
 	return 0;
 }
