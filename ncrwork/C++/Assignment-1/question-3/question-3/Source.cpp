@@ -1,42 +1,53 @@
 #include<iostream>
 using namespace std;
-class complex
+class comp
 {
-	int r, i;
+	int r;
+	int i;
 public:
-	complex()
+	comp(int a, int b)
 	{
-		cout << "in no arg constructor\n";
+		r = a;
+		i = b;
 	}
-	complex(int re)
+	void display()
 	{
-		r = re;
-		i = 0;
+		cout << r << "+i" << i << endl;
 	}
-	complex(int re, int im)
-	{
-		r = re;
-		i = im;
-	}
-	friend  void add(complex c, complex c1);
-	friend void mul(complex c, complex c1);
+
+	friend void add(comp c1, comp c2);
+	friend void mul(comp c1, comp c2);
 };
-void add(complex c, complex c1)
-{
-	cout << "addtion of two complex numnbers is" << (c1.r + c.r) << "+i" << (c1.i + c.i);
-}
-void mul(complex c, complex c1)
-{
-	cout << "\nmul of two complex numnbers is" << (c1.r*c.r) << "+i" << (c1.i*c.i);
-}
 int main()
 {
-	complex c(1, 2);
-	complex c1(2, 3);
-	add(c1, c);
-	mul(c, c1);
+	comp t1(2, 3);
+	cout << "first:";
+	t1.display();
+	comp t2(3, 4);
+	cout << "second:";
+	t2.display();
+	cout << "sum is:";
+	add(t1, t2);
+	mul(t1, t2);
+
 
 
 	getchar();
 	return 0;
+}
+void add(comp c1, comp c2)
+{
+	int r1;
+	int i1;
+	r1 = c1.r + c2.r;
+	i1 = c1.i + c2.i;
+	cout << r1 << "+i" << i1 << endl;
+}
+void mul(comp c1, comp c2)
+{
+	int r1;
+	int i1;
+	r1 = ((c1.r*c2.r) - (c1.i*c2.i));
+	i1 = ((c2.r*c1.i) + (c1.r*c2.i));
+	cout << r1 << "+i" << i1 << endl;
 }
