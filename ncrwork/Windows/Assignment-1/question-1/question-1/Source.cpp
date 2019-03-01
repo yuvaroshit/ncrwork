@@ -29,7 +29,15 @@ int main()
 		printf("it cannot be converted : %d \n", GetLastError());
 	else
 		printf("can be converted : %S \n", wc);
-
+	int l = WideCharToMultiByte(CP_UTF8, 0, j, -1, mb, 0, NULL, NULL);
+	mb = new char[l];
+	int l1 = WideCharToMultiByte(CP_UTF8, 0, j, -1, mb, l, NULL, NULL);
+	if (l1 == 0)
+	{
+		printf("cannot be converted .error(%d)", GetLastError());
+	}
+	else
+		printf("Can be converted...is %s\n", mb);
 	system("pause");
 	return 0;
 }
