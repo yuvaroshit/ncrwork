@@ -14,7 +14,6 @@ public:
 	{
 		cout << r << "+i" << i << endl;
 	}
-
 	friend void add(comp c1, comp c2);
 	friend void mul(comp c1, comp c2);
 };
@@ -29,9 +28,6 @@ int main()
 	cout << "sum is:";
 	add(t1, t2);
 	mul(t1, t2);
-
-
-
 	getchar();
 	return 0;
 }
