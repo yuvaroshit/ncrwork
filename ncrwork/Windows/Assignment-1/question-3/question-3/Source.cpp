@@ -10,7 +10,7 @@ void main()
 	LPWSTR exp;
 	BOOL valid;
 	valid = ExpandEnvironmentStrings(
-		source,//LPCSTR lpSrc,
+		source,//LPCSTR lpSrc,//a
 		expand,//LPSTR  lpDest,
 		size//DWORD  dwSize
 	);
