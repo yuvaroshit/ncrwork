@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	cout << "argc" << argc << endl;
 	if (argc == 1)
 		cout << "Not Working" << endl;
-	else if (argc == 2)//
+	else if (argc == 2)
 	{
 
 		hFile = CreateFileA(argv[1], GENERIC_READ | GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
