@@ -15,7 +15,7 @@ void main(int argc, char *argv[])
 	}
 	else
 	{
-		cout << "sucessful56" << endl;
+		cout << "successful56" << endl;
 		WaitForSingleObject(pi.hProcess, INFINITE);
 		CloseHandle(pi.hProcess);
 		CloseHandle(pi.hThread);
