@@ -10,6 +10,8 @@ void main(int argc, TCHAR *argv[])
 	si.cb = sizeof(si);
 	si2.cb = sizeof(si2);
 
+	
+
 	if (CreateProcessA(NULL, argv[1], NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
 	{
 		cout << "CreateProcess calc is  done \n";
