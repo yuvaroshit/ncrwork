@@ -4,11 +4,11 @@ using namespace std;
 void main() {
 	HANDLE getevent;
 	getevent = CreateEventA(NULL, FALSE, TRUE, "Created an event");
+	//checks for errors in event creation
 	if (getevent == NULL)
 	{
 		cout << "Error" << endl;
 		cout << "The error code: " << GetLastError() << endl;
-
 	}
 	else
 	{
