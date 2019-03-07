@@ -15,7 +15,7 @@ char* STRREV(char *str1)
 	return str1;
 }
 //Compares 2 strings
-int STRCMP(char *str1, char *str2)
+/*int STRCMP(char *str1, char *str2)
 {
 	while (*str1 == *str2)
 	{
@@ -25,6 +25,26 @@ int STRCMP(char *str1, char *str2)
 		str2++;
 	}
 	return ((*str1) - (*str2));
+}*/
+int STRCMP(char string1[], char string2[])
+{
+	int i = 0, flag = 0;
+	while (flag == 0)
+	{
+		if (string1[i]>string2[i])
+		{
+			flag = 1;
+		}
+		else if (string1[i]<string2[i])
+		{
+			flag = -1;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return flag;
 }
 //Concatenates the strings
 char* STRCAT(char *str1, char *str2)
